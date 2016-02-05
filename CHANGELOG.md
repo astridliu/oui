@@ -24,6 +24,7 @@ This file follows the format suggested by [Keep a CHANGELOG](https://github.com/
 - [Patch] Fix typo in license.
 - [Patch] Tiny documentation fixes. (#234)
 - [Patch] Change `oui-icons` reference in `package.json` to support older versions of NPM. (#222)
+- [Patch] Tiny documentation fixes. (#234)
 
 ## [9.0.0][9.0.0] - 2016-01-19
 ### Added
