@@ -65,4 +65,4 @@ This applies any time classes are being renamed and you want old and new code to
 5. Run `npm version patch`, `npm version minor`, or `npm version major` depending on the highest importance issue in the new changes. `minor` maps to "Feature" and `major` maps to "Release" in the `CHANGELOG.md`.
 6. [Create a new release on GitHub](https://github.com/optimizely/oui/releases/new). It should [look like this](https://www.dropbox.com/s/1nln5ttbxfbacuv/Screenshot%202015-09-02%2011.31.21.png). Select
  the tag version that gulp generated, leave the "Release title" blank, and paste the "Unreleased" contributions from the `CHANGELOG.md` in the release notes. 
- 7. [Deploy new documentation](https://github.com/optimizely/scribesass/blob/master/README.md) using ScribeSass.
+7. [Deploy new documentation](https://github.com/optimizely/scribesass/blob/master/README.md) using ScribeSass.
