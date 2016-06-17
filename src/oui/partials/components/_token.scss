@@ -32,7 +32,6 @@
 
 .#{$namespace}token-wrap {
   display: inline-flex;
-
   border: 1px solid map-fetch($color, ui, base);
   background: map-fetch($color, background, light);
   padding: map-fetch($token, padding);
@@ -42,7 +41,6 @@
 .#{$namespace}token {
   display: inline-flex;
   align-items: center;
-
   color: map-fetch($color, text, white);
   line-height: 1;
   padding: spacer(0.5) spacer(1);
@@ -76,7 +74,6 @@
 
 .#{$namespace}token__move {
   transform: rotate(90deg);
-
   color: darken(map-fetch($color, ui, base), 10);
 }
 
