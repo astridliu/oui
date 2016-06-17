@@ -1,0 +1,56 @@
+////
+/// Badge
+/// @group Components
+/// @description Useful for counts like the number of live or draft changes.
+/// @example[html] Draft
+///   <ul class="badge"><li class="badge__draft">2</li></ul>
+/// @example[html] Live
+///   <ul class="badge"><li class="badge__live">5</li></ul>
+/// @example[html] Primary
+///   <ul class="badge"><li class="badge__primary">1</li></ul>
+/// @example[html] Plain
+///   <ul class="badge"><li class="badge__plain">0</li></ul>
+////
+
+.#{$namespace}badge {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+
+  > li {
+    height: map-fetch($badge, size);
+    line-height: map-fetch($badge, size);
+    background: #B4B7B9;
+    color: map-fetch($color, ui, white);
+    min-width: 16px;
+    text-align: center;
+    margin-right: 5px;
+    border-radius: map-fetch($badge, size);
+    font-size: 10px;
+    padding: 0 5px;
+    font-weight: 700;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+
+    &.badge__draft {
+      background: map-fetch($color, ui, draft);
+    }
+
+    &.badge__live {
+      background: map-fetch($color, ui, live);
+    }
+
+    &.badge__primary {
+      background: map-fetch($token, background-color, primary);
+    }
+
+    &.badge__plain {
+      background: transparent;
+      color: map-fetch($color, ui, medium);
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
