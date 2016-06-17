@@ -20,16 +20,16 @@
   > li {
     height: map-fetch($badge, size);
     line-height: map-fetch($badge, size);
-    background: #B4B7B9;
+    background: map-fetch($badge, background-color);
     color: map-fetch($color, ui, white);
-    min-width: 16px;
+    min-width: map-fetch($badge, min-width);
     text-align: center;
-    margin-right: 5px;
+    margin-right: spacer(0.5);
     border-radius: map-fetch($badge, size);
-    font-size: 10px;
-    padding: 0 5px;
-    font-weight: 700;
-    letter-spacing: 0.5px;
+    font-size: map-fetch($badge, font-size);
+    padding: 0 spacer(0.5);
+    font-weight: map-fetch($badge, font-weight);
+    letter-spacing: map-fetch($badge, letter-spacing);
     text-transform: uppercase;
 
     &.badge__draft {
