@@ -1,5 +1,7 @@
 import React from 'react';
 import Code from '../src/components/Code';
+import ArrowsInline from '../src/components/ArrowsInline';
+import reactElementToJSXString from 'react-element-to-jsx-string';
 
 const ComponentWrapper = (props) => {
   return (
@@ -10,7 +12,7 @@ const ComponentWrapper = (props) => {
       </h2>
 
       <Code type="block">
-        example "HTML"
+        {reactElementToJSXString(<ArrowsInline type="what" type2="what2">test</ArrowsInline>)}
       </Code>
 
       <p>{props.example.description}</p>
