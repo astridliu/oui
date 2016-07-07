@@ -6,7 +6,14 @@ This file follows the format suggested by [Keep a CHANGELOG](https://github.com/
 
 ## [Unreleased][Unreleased]
 ### Added
+- [Feature] Extend `Code` React component to accept a language. (#433)
+
+## [13.0.0-rc.3][13.0.0-rc.3] - 2016-07-05
+### Added
 - [Feature] Add syntax highlighting option to React `Code` component.
+
+### Fixed
+- [Patch] Update instructions for deploying beta versions of OUI.
 
 ## [13.0.0-rc.2][13.0.0-rc.2] - 2016-07-01
 ### Added
@@ -406,7 +413,7 @@ This file follows the format suggested by [Keep a CHANGELOG](https://github.com/
 ### Added
 - [Patch] Use semantic versioning in LEGO (#58).
 
-[Unreleased]: https://github.com/optimizely/oui/compare/v13.0.0-rc.2...HEAD
+[Unreleased]: https://github.com/optimizely/oui/compare/v13.0.0-rc.3...HEAD
 [0.0.2]: https://github.com/optimizely/oui/compare/v0.0.1...v0.0.2
 [0.0.3]: https://github.com/optimizely/oui/compare/v0.0.2...v0.0.3
 [1.0.0]: https://github.com/optimizely/oui/compare/v0.0.3...v1.0.0
@@ -442,3 +449,4 @@ This file follows the format suggested by [Keep a CHANGELOG](https://github.com/
 [12.2.0]: https://github.com/optimizely/oui/compare/v12.1.0...v12.2.0
 [13.0.0-rc.1]: https://github.com/optimizely/oui/compare/v12.2.0...v13.0.0-rc.1
 [13.0.0-rc.2]: https://github.com/optimizely/oui/compare/v13.0.0-rc.1...v13.0.0-rc.2
+[13.0.0-rc.3]: https://github.com/optimizely/oui/compare/v13.0.0-rc.2...v13.0.0-rc.3
