@@ -59,14 +59,10 @@
     "postversion": "npm run postversion:publish && npm run postversion:update-devel",
     "postversion:publish": "git push && git push --tags",
     "postversion:update-devel": "git checkout devel && git pull && git merge master && git push origin devel && git checkout master",
-    "react": "gulp sass && cp ./docs/index.html ./dist/docs/index.html && mkdir -p ./dist/docs/css && cp -Rv ./dist/css ./dist/docs && webpack && browser-sync reload",
-    "react:serve": "npm run react && parallelshell 'npm run react:onchange' 'npm run react:browser-sync'",
-    "react:onchange": "onchange 'docs/**/*.(jsx|js)' -- npm run react",
-    "react:browser-sync": "browser-sync start --server dist/docs/",
-    "react-docs": "mkdir -p dist/docs && cp -v docs/*.html dist/docs/ && react-docgen src/components/ -i tests > docs/data.json && browser-sync reload",
+    "react-docs": "gulp sass && react-docgen src/components/ -i tests -i example > docs/data.json && cp ./docs/index.html ./dist/docs/index.html && mkdir -p ./dist/docs/css && cp -Rv ./dist/css ./dist/docs && webpack && browser-sync reload",
     "react-docs:serve": "npm run react-docs && parallelshell 'npm run react-docs:onchange' 'npm run react-docs:browser-sync'",
-    "react-docs:browser-sync": "browser-sync start --server './dist/docs/'",
-    "react-docs:onchange": "onchange 'src/**/*.(jsx|js)' -- npm run react-docs"
+    "react-docs:onchange": "onchange '(docs|src)/**/*.(jsx|js)' -- npm run react-docs",
+    "react-docs:browser-sync": "browser-sync start --server dist/docs/"
   },
   "repository": {
     "type": "git",

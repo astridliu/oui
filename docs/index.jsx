@@ -1,26 +1,50 @@
 /* eslint-disable react/jsx-filename-extension, react/prefer-stateless-function */
 import React from 'react';
 import ReactDOM from 'react-dom';
-let doctrine = require('doctrine');
+import * as doctrine from 'doctrine';
 
 import ComponentWrapper from './ComponentWrapper';
 import componentsJSON from './data.json';
 
 import Attention from '../src/components/Attention';
+import AttentionExample from '../src/components/Attention/example';
 import ArrowsInline from '../src/components/ArrowsInline';
+import ArrowsInlineExample from '../src/components/ArrowsInline/example';
 import Button from '../src/components/Button';
+import ButtonExample from '../src/components/Button/example';
 import Code from '../src/components/Code';
+import CodeExample from '../src/components/Code/example';
 import Input from '../src/components/Input';
+import InputExample from '../src/components/Input/example';
 import Label from '../src/components/Label';
+import LabelExample from '../src/components/Label/example';
 
 // Component array to loop over
-const components = [
-  Attention,
-  ArrowsInline,
-  Button,
-  Code,
-  Input,
-  Label,
+const componentsArray = [
+  {
+    index: ArrowsInline,
+    example: ArrowsInlineExample,
+  },
+  {
+    index: Attention,
+    example: AttentionExample,
+  },
+  {
+    index: Button,
+    example: ButtonExample,
+  },
+  {
+    index: Code,
+    example: CodeExample,
+  },
+  {
+    index: Input,
+    example: InputExample,
+  },
+  {
+    index: Label,
+    example: LabelExample,
+  },
 ]
 
 const ComponentRow = ({ children }) => {
@@ -38,24 +62,35 @@ ComponentRow.propTypes = {
 class App extends React.Component {
   render() {
 
-    let componentNodes = components.map(function(Component) {
-      let json = componentsJSON['src/components/' + Component.name + '/index.js'];
-      let example = doctrine.parse(json.description);
+    let componentNodes = componentsArray.map(function(component) {
+      let json = componentsJSON['src/components/' + component.index.name + '/index.js'];
+      let desc = doctrine.parse(json.description);
+
+      // desc.tags.map(function(i){
+      //
+      //   if (i.title == 'param') {
+      //     component.index.param = i['description'];
+      //   }
+      //
+      //   if (i.title == 'returns') {
+      //     component.index.returns = i['description'];
+      //   }
+      //
+      // });
 
       return (
         <ComponentWrapper
-          key={ Component.name }
-          description={ json.description }
-          example={ example }
-          title={ Component.name }>
-          {/* example.js code */}
-          {/* props table */}
+          key={ component.index.name }
+          description={ desc.description }
+          examples={ component.example }
+          title={ component.index.name }
+          props={ json.props }>
         </ComponentWrapper>
       );
     });
 
     return (
-      <div style={ { margin: '50px auto', width: '800px' } }>
+      <div style={ { padding: '20px', margin: '50px auto', maxWidth: '800px' } }>
 
         <header className="push-quad--ends">
           <h1>

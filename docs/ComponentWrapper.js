@@ -1,22 +1,31 @@
 import React from 'react';
-import Code from '../src/components/Code';
-import ArrowsInline from '../src/components/ArrowsInline';
-import reactElementToJSXString from 'react-element-to-jsx-string';
+import PropsTable from './PropsTable';
+import ComponentRow from './ComponentRow';
 
 const ComponentWrapper = (props) => {
-  return (
-    <div className="push-triple--ends">
 
-      <h2 className="push-double--bottom soft--bottom border--bottom">
+  return (
+    <div className="push-quad--ends">
+
+      <h2 className="push-double--bottom">
         {props.title}
       </h2>
 
-      <Code type="block">
-        {reactElementToJSXString(<ArrowsInline type="what" type2="what2">test</ArrowsInline>)}
-      </Code>
+      <p>{props.description}</p>
 
-      <p>{props.example.description}</p>
+      <div className="example border--all soft push--bottom">
+        <h3>Example</h3>
+        {props.examples.map( (exampleObject, i) => {
 
+          return <ComponentRow key={i}
+                               components={exampleObject.examples}
+                               backgroundColor={exampleObject.backgroundColor}
+                               isPadded={exampleObject.isPadded}/>
+
+        })}
+      </div>
+
+      <PropsTable componentProps={props.props}/>
     </div>
   );
 };
