@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 import React from 'react';
 import Attention from '../index';
 
@@ -14,7 +15,7 @@ export default [
       <Attention alignment="left" type="bad-news">
         Hello! This is a short attention bar.
       </Attention>,
-    ]
+    ],
   },
   {
     examples: [
@@ -43,5 +44,5 @@ export default [
         Hello! This is a short attention bar.
       </Attention>,
     ],
-  }
+  },
 ];

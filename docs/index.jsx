@@ -45,7 +45,7 @@ const componentsArray = [
     index: Label,
     example: LabelExample,
   },
-]
+];
 
 const ComponentRow = ({ children }) => {
   return (
@@ -94,9 +94,11 @@ class App extends React.Component {
 
         <header className="push-quad--ends">
           <h1>
-            <img className="push--right soft-half--bottom display--inline-block vertical-align--middle"
-                 src="https://raw.githubusercontent.com/optimizely/oui/devel/assets/louis.gif"
-                 width="130" />
+            <img
+              className="push--right soft-half--bottom display--inline-block vertical-align--middle"
+              src="https://raw.githubusercontent.com/optimizely/oui/devel/assets/louis.gif"
+              width="130"
+            />
                  OUI React Components
           </h1>
         </header>
@@ -105,11 +107,13 @@ class App extends React.Component {
 
         <footer className="soft-quad--ends border--top">
           <p className="muted">
-            <img className="push--right soft-half--bottom display--inline-block vertical-align--middle"
-                 src="https://raw.githubusercontent.com/optimizely/oui/devel/assets/louis.gif"
-                 style={{WebkitFilter: 'grayscale(100%)'}}
-                 width="40" />
-                Our React component documentation is a work in progress. <a href="https://optimizely.slack.com/messages/oui">Ask for help</a>!
+            <img
+              className="push--right soft-half--bottom display--inline-block vertical-align--middle"
+              src="https://raw.githubusercontent.com/optimizely/oui/devel/assets/louis.gif"
+              style={ {WebkitFilter: 'grayscale(100%)'} }
+              width="40"
+            />
+            Our React component documentation is a work in progress. <a href="https://optimizely.slack.com/messages/oui">Ask for help</a>!
           </p>
         </footer>
 

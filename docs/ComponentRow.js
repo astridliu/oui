@@ -3,7 +3,7 @@ import ComponentRowItem from './ComponentRowItem';
 import Code from '../src/components/Code';
 import reactElementToJSXString from 'react-element-to-jsx-string';
 
-const ComponentRow = ( props ) => {
+const ComponentRow = (props) => {
   let codeHTML = '';
   let classes = ['push--bottom'];
   if (props.isPadded) {
@@ -15,32 +15,33 @@ const ComponentRow = ( props ) => {
 
   return (
     <div className="push-triple--bottom">
-      <div className={classes.join(' ')}>
+      <div className={ classes.join(' ') }>
         {
-          props.components.map( (exampleComponent, i) => {
-            codeHTML += reactElementToJSXString( exampleComponent ) + '\n';
+          props.components.map((exampleComponent, i) => {
+            codeHTML += reactElementToJSXString(exampleComponent) + '\n';
 
             return (
-              <ComponentRowItem key={i}
-                isInline={props.components.length > 1}>
-                {exampleComponent}
+              <ComponentRowItem
+                key={ i }
+                isInline={ props.components.length > 1 }>
+                { exampleComponent }
               </ComponentRowItem>
-            )
+            );
           })
         }
       </div>
-      <Code type="block"
-        isHighlighted={true}>
-        {codeHTML}
+      <Code
+        type="block"
+        isHighlighted={ true }
+        language='html'>
+        { codeHTML }
       </Code>
     </div>
-  )
+  );
 
-}
+};
 
 ComponentRow.propTypes = {
-  isPadded: React.PropTypes.bool,
-  components: React.PropTypes.array,
   backgroundColor: React.PropTypes.oneOf([
     'faint',
     'light',
@@ -55,6 +56,8 @@ ComponentRow.propTypes = {
     'live',
     'draft',
   ]),
-}
+  components: React.PropTypes.array,
+  isPadded: React.PropTypes.bool,
+};
 
 export default ComponentRow;

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const PropsTable = ( props ) => {
+const PropsTable = (props) => {
   let componentProps = props.componentProps;
 
   return (
@@ -14,38 +14,38 @@ const PropsTable = ( props ) => {
       </thead>
       <tbody>
 
-      {componentProps && Object.keys(componentProps).map( (prop, i) => {
+      { componentProps && Object.keys(componentProps).map((prop, i) => {
 
         const theProp = componentProps[prop];
         let type = theProp.type && theProp.type.name;
 
         if (type === 'enum') {
-          type = theProp.type.value.map( (v,j) =>
-            {
-              return (
-                <li key={j}>{v.value}</li>
-              )
-            }
+          type = theProp.type.value.map((v, j) => {
+            return (
+              <li key={ j }>{ v.value }</li>
+            );
+          }
           );
         }
 
         return (
-          <tr className="border--bottom" key={i}>
+          <tr className="border--bottom" key={ i }>
             <td className="soft">
               <span className="weight--bold">{ prop }</span>
             </td>
             <td className="soft"><ul>{ type }</ul></td>
             <td className="soft">{ theProp.description }</td>
           </tr>
-        )
-      })}
+        );
+      }) }
       </tbody>
     </table>
-  )
-}
+  );
+};
 
 PropsTable.propTypes = {
-  props: React.PropTypes.object
-}
+  componentProps: React.PropTypes.object,
+  props: React.PropTypes.object,
+};
 
 export default PropsTable;
