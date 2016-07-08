@@ -90,7 +90,7 @@ class App extends React.Component {
     });
 
     return (
-      <div style={ { padding: '20px', margin: '50px auto', maxWidth: '800px' } }>
+      <div style={ { padding: '20px', margin: '50px auto', maxWidth: '900px' } }>
 
         <header className="push-quad--ends">
           <h1>

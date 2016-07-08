@@ -5,16 +5,16 @@ import ComponentRow from './ComponentRow';
 const ComponentWrapper = (props) => {
 
   return (
-    <div className="push-quad--ends">
+    <div className="push-quad--ends soft-quad--ends">
 
-      <h2 className="push-double--bottom">
-        { props.title }
-      </h2>
+      <header className="push-double--bottom">
+        <h2 className="weight--bold">
+          { props.title }
+        </h2>
+        <p>{ props.description }</p>
+      </header>
 
-      <p>{ props.description }</p>
-
-      <div className="example border--all soft push--bottom">
-        <h3>Example</h3>
+      <div className="example">
         { props.examples.map((exampleObject, i) => {
 
           return (

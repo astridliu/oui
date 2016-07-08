@@ -19,6 +19,12 @@ const PropsTable = (props) => {
         const theProp = componentProps[prop];
         let type = theProp.type && theProp.type.name;
 
+        // isRequired
+        let required = '';
+        if (theProp.required) {
+          required = '*required';
+        }
+
         if (type === 'enum') {
           type = theProp.type.value.map((v, j) => {
             return (
@@ -32,6 +38,7 @@ const PropsTable = (props) => {
           <tr className="border--bottom" key={ i }>
             <td className="soft">
               <span className="weight--bold">{ prop }</span>
+              <span className="color--red micro push-half--left" style={ {color: 'red'} }>{ required }</span>
             </td>
             <td className="soft"><ul>{ type }</ul></td>
             <td className="soft">{ theProp.description }</td>

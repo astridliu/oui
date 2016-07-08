@@ -4,9 +4,8 @@ import Input from '../index';
 
 export default [
   {
-    backgroundColor: 'brand-dark',
     examples: [
-      <Input type="text" />,
+      <Input type="text" placeholder="This is a placeholder" />,
     ],
   },
 ];

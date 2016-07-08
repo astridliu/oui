@@ -5,7 +5,7 @@ import reactElementToJSXString from 'react-element-to-jsx-string';
 
 const ComponentRow = (props) => {
   let codeHTML = '';
-  let classes = ['push--bottom'];
+  let classes = ['border--all', 'no-border--bottom', 'soft-double'];
   if (props.isPadded) {
     classes.push('soft');
   }
