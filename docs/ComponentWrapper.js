@@ -5,7 +5,9 @@ import ComponentRow from './ComponentRow';
 const ComponentWrapper = (props) => {
 
   return (
-    <div className="push-quad--ends soft-quad--ends">
+    <div
+      className="push-quad--ends soft-quad--ends"
+      id={ props.title }>
 
       <header className="push-double--bottom">
         <h2 className="weight--bold">

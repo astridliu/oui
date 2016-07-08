@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import * as doctrine from 'doctrine';
 
 import ComponentWrapper from './ComponentWrapper';
+import Nav from './Nav';
 import componentsJSON from './data.json';
 
 import Attention from '../src/components/Attention';
@@ -18,6 +19,8 @@ import Input from '../src/components/Input';
 import InputExample from '../src/components/Input/example';
 import Label from '../src/components/Label';
 import LabelExample from '../src/components/Label/example';
+import Table from '../src/components/Table';
+import TableExample from '../src/components/Table/example';
 
 // Component array to loop over
 const componentsArray = [
@@ -45,6 +48,10 @@ const componentsArray = [
     index: Label,
     example: LabelExample,
   },
+  {
+    index: Table,
+    example: TableExample,
+  },
 ];
 
 const ComponentRow = ({ children }) => {
@@ -61,6 +68,16 @@ ComponentRow.propTypes = {
 
 class App extends React.Component {
   render() {
+
+    let componentItems = [];
+    componentsArray.map(function(component) {
+      componentItems.push(
+        {
+          label: component.index.name,
+          href: '#' + component.index.name,
+        }
+      );
+    });
 
     let componentNodes = componentsArray.map(function(component) {
       let json = componentsJSON['src/components/' + component.index.name + '/index.js'];
@@ -102,6 +119,8 @@ class App extends React.Component {
                  OUI React Components
           </h1>
         </header>
+
+        <Nav items={ componentItems } />
 
         { componentNodes }
 

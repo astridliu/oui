@@ -1,52 +1,42 @@
 import React from 'react';
+import Table from '../src/components/Table';
 
 const PropsTable = (props) => {
   let componentProps = props.componentProps;
+  let data = [];
+
+  if (componentProps) {
+    Object.keys(componentProps).map((prop, i) => {
+
+      // name with *required comment
+      let propDisplayName = prop;
+      if (componentProps[prop].required) {
+        propDisplayName = '*' + prop + ' (required)';
+      }
+
+      // handle enum types
+      let propDisplayType = componentProps[prop].type.name;
+      if (propDisplayType === 'enum') {
+        propDisplayType = <Table data={ componentProps[prop].type.value.map(v => [v.value]) } />;
+      }
+
+      data.push(
+        [
+          propDisplayName,
+          propDisplayType,
+          componentProps[prop].description,
+        ]
+      );
+    });
+  }
 
   return (
-    <table className="table">
-      <thead>
-        <tr className="border--bottom background--faint">
-          <th className="soft width--1-6">Prop</th>
-          <th className="soft width--1-8">Type</th>
-          <th className="soft">Description</th>
-        </tr>
-      </thead>
-      <tbody>
-
-      { componentProps && Object.keys(componentProps).map((prop, i) => {
-
-        const theProp = componentProps[prop];
-        let type = theProp.type && theProp.type.name;
-
-        // isRequired
-        let required = '';
-        if (theProp.required) {
-          required = '*required';
-        }
-
-        if (type === 'enum') {
-          type = theProp.type.value.map((v, j) => {
-            return (
-              <li key={ j }>{ v.value }</li>
-            );
-          }
-          );
-        }
-
-        return (
-          <tr className="border--bottom" key={ i }>
-            <td className="soft">
-              <span className="weight--bold">{ prop }</span>
-              <span className="color--red micro push-half--left" style={ {color: 'red'} }>{ required }</span>
-            </td>
-            <td className="soft"><ul>{ type }</ul></td>
-            <td className="soft">{ theProp.description }</td>
-          </tr>
-        );
-      }) }
-      </tbody>
-    </table>
+    <Table
+      className="table"
+      headings={ ['Prop', 'Type', 'Description'] }
+      data={ data }
+      style="rule"
+    />
   );
 };
 
