@@ -83,18 +83,6 @@ class App extends React.Component {
       let json = componentsJSON['src/components/' + component.index.name + '/index.js'];
       let desc = doctrine.parse(json.description);
 
-      // desc.tags.map(function(i){
-      //
-      //   if (i.title == 'param') {
-      //     component.index.param = i['description'];
-      //   }
-      //
-      //   if (i.title == 'returns') {
-      //     component.index.returns = i['description'];
-      //   }
-      //
-      // });
-
       return (
         <ComponentWrapper
           key={ component.index.name }

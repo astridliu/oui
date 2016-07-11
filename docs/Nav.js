@@ -18,26 +18,4 @@ Nav.propTypes = {
   items: React.PropTypes.array,
 };
 
-/*
-<Nav
-  items={ [
-    {
-      label: '',
-      href: '',
-    },
-  ] }
-/>
-*/
-
-  // let items = [];
-  // componentProps[prop].items.map((item, i) => {
-  //   data.push(
-  //     {
-  //       label: item.value,
-  //       href: item.href,
-  //     }
-  //   );
-  // }
-
-
 export default Nav;
