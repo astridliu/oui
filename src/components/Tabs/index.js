@@ -51,13 +51,13 @@ Tabs.propTypes = {
   tabActive: React.PropTypes.number,
 };
 
-Tabs.Tab = (props) => {
+Tabs.MenuItem = (props) => {
   return (
     <div>{props.children}</div>
   );
 };
 
-Tabs.Tab.propTypes = {
+Tabs.MenuItem.propTypes = {
   onClick: React.PropTypes.func.isRequired,
   testSection: React.PropTypes.string,
   isDisabled: React.PropTypes.bool,

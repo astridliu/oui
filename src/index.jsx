@@ -9,6 +9,7 @@ import Code from './components/Code';
 import Input from './components/Input';
 import Label from './components/Label';
 import Table from './components/Table';
+import Tabs from './components/Tabs';
 
 const Component = ({ children, title }) => {
   return (
@@ -322,18 +323,18 @@ var bat = 'baz';` }
         <Component title="Tabs">
           <ComponentRow isPadded>
             <Tabs activeTab={0}>
-              <Tabs.Tab isActive={this.props.activeTab === 0}
-                        onClick={ function() {
-                          alert("clicked")
-                        } }>Tab #1</Tabs.Tab>
-              <Tabs.Tab isActive={this.props.activeTab === 1}
-                        onClick={ function() {
-                          alert("clicked")
-                        } }>Tab #2</Tabs.Tab>
-              <Tabs.Tab isActive={this.props.activeTab === 2}
-                        onClick={ function() {
-                          alert("clicked")
-                        } }>Tab #3</Tabs.Tab>
+              <Tabs.MenuItem isActive={this.props.activeTab === 0}
+                             onClick={ function() {
+                               alert("clicked")
+                             } }>Tab #1</Tabs.MenuItem>
+              <Tabs.MenuItem isActive={this.props.activeTab === 1}
+                             onClick={ function() {
+                               alert("clicked")
+                             } }>Tab #2</Tabs.MenuItem>
+              <Tabs.MenuItem isActive={this.props.activeTab === 2}
+                             onClick={ function() {
+                               alert("clicked")
+                             } }>Tab #3</Tabs.MenuItem>
             </Tabs>
           </ComponentRow>
         </Component>
