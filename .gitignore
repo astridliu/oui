@@ -1,7 +1,7 @@
 # Updating this? Consider updating `.npmignore` as well.
 
 dist
-
+.idea
 node_modules
 s3
 coverage
