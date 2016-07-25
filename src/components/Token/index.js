@@ -21,9 +21,10 @@ const DismissButton = (onDismiss, testSection) => {
  */
 const Token = (props) => {
   return (
-    <div className="oui-token-wrap"
-         data-test-section={ props.testSection }>
-      <div className={'oui-token oui-token--' + props.style}>{ props.name }</div>
+    <div
+      className="oui-token-wrap"
+      data-test-section={ props.testSection }>
+      <div className={ 'oui-token oui-token--' + props.style }>{ props.name }</div>
       { props.isDismissible ? DismissButton(props.onDismiss, props.testSection) : null }
     </div>
   );
