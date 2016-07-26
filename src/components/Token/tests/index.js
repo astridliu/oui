@@ -20,7 +20,7 @@ describe('components/Token', () => {
     );
 
     const componentNode = testHelpers.getNodeFromComponent(component);
-    expect(componentNode.innerHTML).toBe('<div class="oui-token oui-token--secondary">goose</div>');
+    expect(componentNode.innerHTML).toContain('goose');
   });
 
   it('should render dismiss button when prop is provided', () => {
@@ -29,7 +29,6 @@ describe('components/Token', () => {
         isDismissible={ true }
         onDismiss={
           function() {
-            // doSomething();
           }
         }
         testSection="goose">
