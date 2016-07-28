@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from '../Button';
+import { Close } from '../Icon';
 import { getAssistiveTextFromColorClass } from '../../utils/accessibility';
 
 const renderDismissButton = (testSection) => {
@@ -10,7 +11,7 @@ const renderDismissButton = (testSection) => {
         size="small"
         ariaLabel="Close alert"
         testSection={ testSection + '-dismiss' }>
-        &times;
+        <Close size={ 16 } />
       </Button>
     </div>
   );

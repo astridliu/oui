@@ -1,9 +1,14 @@
+// var webpack = require('webpack');
+
 module.exports = {
   entry: {
     docs: './docs/index.jsx',
   },
   output: {
-    filename: './dist/docs/js/docs.js',
+    filename: '[name].js',
+    chunkFilename: "[name]-[hash].js",
+    path: __dirname + '/dist/docs/js/',
+    publicPath: 'js/'
   },
   module: {
     loaders: [
@@ -20,6 +25,17 @@ module.exports = {
         test: /\.css$/,
         loader: 'style-loader!css-loader',
       },
+      {
+        test: /\.svg$/,
+        loaders: [
+          'babel',
+          'svg-jsx-loader',
+          'svgo-loader',
+        ],
+      },
     ],
   },
+  // plugins: [
+  //   new webpack.optimize.UglifyJsPlugin(),
+  // ],
 };
