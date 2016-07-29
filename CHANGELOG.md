@@ -7,6 +7,7 @@ This file follows the format suggested by [Keep a CHANGELOG](https://github.com/
 ## [Unreleased][Unreleased]
 ### Added
 - [Feature] Created Token react component.
+- [Patch] Fix disabled state for toggle buttons (#479)
 
 ### Fixed
 - [Patch] Fix jarring active state for toggle buttons. (#470)
